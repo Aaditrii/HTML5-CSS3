@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title>text overflow</title>
+	<style>
+	p.test1{
+		white-space:nowrap;
+		width:200px;
+		border:1px solid red;
+		overflow:hidden;
+	}
+	p.test1:hover{
+		overflow:visible;
+	}
+</style>
+</head>
+<body>
+	<p class="test1" style="text-overflow:ellipsis;">this is some long text that will not fit in this box</p>
+	</body>
+	</html>
