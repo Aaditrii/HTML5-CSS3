@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DRAG AND DROP</title>
+	<style>
+	#div1{
+		width:400px;
+		height:400px;
+		border:1px solid black;
+		padding:20px;
+	}
+</style>
+<script>
+	function allowDrop(ev){
+		ev.preventDefault();
+	}
+	function drag(ev){
+		ev.dataTransfer.setData("text",ev.target.id);
+	}
+	function drop(ev){
+		ev.preventDefault();
+		var data=ev.dataTransfer.getData("text");
+		ev.target.appendChild(document.getElementById(data));
+	}
+</script>
+</head>
+<body>
+	<p>drag and drop the image into the square</p>
+	<div id="div1" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+	<br/>
+	<img src="C:\Users\Dell\Desktop\web\jj.jpg" id="drag1" ondragstart="drag(event)" draggable="true" width="200px" height="100px">
+</body>
+</html>
